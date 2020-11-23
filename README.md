@@ -1,4 +1,4 @@
-# dots
+### dots
 Keeping track of the dot files I care about:
-- vimrc: vim settings
-- bash_profile: bash settings
+- _vimrc_: vim settings
+- _bash_profile_: bash settings
