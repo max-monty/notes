@@ -1,1 +1,0 @@
-/Users/maxmontgomery/.vimrc
