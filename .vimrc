@@ -9,6 +9,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'neoclide/coc.nvim' , { 'branch' : 'release' }
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'mustache/vim-mustache-handlebars'
 call plug#end()
 
 colorscheme monokai
@@ -17,9 +18,11 @@ colorscheme monokai
 set tabstop=4
 set shiftwidth=4
 set expandtab
+set linebreak
+set number
 
 " on start
-autocmd vimenter * NERDTree
+" autocmd vimenter * NERDTree
 autocmd BufEnter * :syntax sync fromstart
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
