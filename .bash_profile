@@ -1,6 +1,7 @@
 # ENVIORNMENT VARIABLES 
     export PATH="$PATH:$HOME/packages/flutter/bin"
     export NOTESPATH="/Users/maxmontgomery/documents/notes"
+    export NOTESCRIPT="/Users/maxmontgomery/projects/notes"
     export EDITOR="vim"
     
 # ALIASES
@@ -20,6 +21,7 @@
     alias stack="notes stack"
     alias push="notes push"
     alias pop="notes pop"
+    alias search="notes search"
     
 # MISCELLANEOUS
     set -o vi # set readline editor to vi

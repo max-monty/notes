@@ -20,6 +20,7 @@ set shiftwidth=4
 set expandtab
 set linebreak
 set number
+set backspace=indent,eol,start
 
 " on start
 " autocmd vimenter * NERDTree
