@@ -32,7 +32,9 @@ class Utils
   end
 
   def move_file(f, l)
-    if @@time.strftime("%Y/%m/%d") != l and f.split('/').pop() != 'daily.md'
+    t =  @@time.strftime("%Y/%m/%d").split('/')
+    s = f.split('/')
+    if t != s[-4..-2]  and s.pop() != 'daily.md'
       FileUtils.mv "#{@@notespath}/#{f}", "#{@@notespath}/#{l}"
     end
   end
