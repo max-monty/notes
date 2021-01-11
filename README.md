@@ -10,6 +10,7 @@ A minimalist command-line interface for note taking and organization, journaling
 ```
 export NOTESPATH="/path/to/where/you/want/notes/saved"
 export NOTESCRIPT="/path/to/where/you/cloned/this/repo"
+export EDITOR="vim"
 ```
     
 3. Run the following commands inside repo:
