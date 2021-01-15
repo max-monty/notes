@@ -24,6 +24,7 @@ bundle install
 
 ```
 notes new <note> -- create new note
+notes remove <note> -- delete note
 notes search [-ft] <phrase> --- search notes by name and or contents
 notes scratch --- open scratch pad
 notes edit <note> --- edit existing note
