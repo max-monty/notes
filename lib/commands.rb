@@ -3,6 +3,18 @@ require 'open3'
 
 class Commands
   @@u = Utils.new
+
+  def remove
+    notes = @@u.search_note_names(ARGV[1..-1].join('_'))
+    if notes.length == 1
+      @@u.remove_file(notes[0])
+    elsif notes.length < 1
+      puts "\nFile not found. Use 'notes -l' to see all notes.\n\n"
+    else 
+      puts "Multiple notes found.\n----"
+      @@u.select_remove_file(notes)
+    end
+  end
   
   def new
     @@u.show_help if ARGV.length < 2
@@ -66,9 +78,7 @@ class Commands
   end
 
   def list
-    # TODO: change to $NOTESPATH
-
-    o = Open3.capture2("find $HOME/documents/notes -type f")[0]
+    o = Open3.capture2("find $NOTESPATH -type f")[0]
     files = o.split("\n")
     for file in files
       split_file = file.split('/')

@@ -21,6 +21,10 @@ class Utils
     exit
   end  
 
+  def remove_file(p)
+    `rm $NOTESPATH/#{p}`
+  end 
+
   def mkdir_cur_date
     p = @@time.strftime("%Y/%m/%d")
     FileUtils.mkdir_p("#{@@notespath}/#{p}")
@@ -64,7 +68,7 @@ class Utils
     return trim(Open3.capture2("grep -ir '#{p}' #{@@notespath}*")[0])
   end
 
-  def select_edit_move_file(f)
+  def select_file(f)
     c = 0
     for x in f 
       puts "[#{c}]  #{x}"
@@ -76,7 +80,6 @@ class Utils
     zero = input == "0"
     i = input.to_i
     exit if zero == false and i == 0
-    puts i
     if i > f.length-1 or i < 0 or i == ''
       puts "\nIndex out of range\n\n"
       exit
@@ -87,7 +90,17 @@ class Utils
       p.pop()
       p = p[0..-1].join('/')
     end
+    return p
+  end
+
+  def select_edit_move_file(f)
+    p = select_file(f)
     edit_file(p)
     move_file(p, mkdir_cur_date())
+  end
+
+  def select_remove_file(f)
+    p = select_file(f)
+    remove_file(p)
   end
 end

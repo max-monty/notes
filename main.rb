@@ -14,11 +14,13 @@ if __FILE__ == $0
   u = Utils.new
   if ARGV.length == 0 or ARGV[0] == '-h' or ARGV[0] == '--help'
     u.show_help
-  elsif ARGV[0] == "new"
+  elsif ARGV[0] == 'new' 
     c.new
-  elsif ARGV[0] == "search"
+  elsif ARGV[0] == 'remove'
+    c.remove
+  elsif ARGV[0] == 'search'
     c.search
-  elsif ARGV[0] == "edit"
+  elsif ARGV[0] == 'edit'
     c.edit
   elsif ARGV[0] == 'scratch'
     c.scratch
@@ -29,7 +31,7 @@ if __FILE__ == $0
   elsif ARGV[0] == 'stack'
     if ARGV.length == 1 or ARGV[1] == '-d' or ARGV[1] == '--default'
       s.default
-    elsif ARGV[1] == '-n' or ARGV[1] == '--new' # create new stack
+    elsif ARGV[1] == '-n' or ARGV[1] == '--new'
       s.new
     elsif ARGV[1] == '-l' or ARGV[1] == '--list' 
       s.list
