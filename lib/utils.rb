@@ -50,6 +50,14 @@ class Utils
   def save_stack(s, n)
     return File.write("#{@@notespath}/stacks/#{n}", JSON.dump(s))
   end
+  
+  def load_project(s)
+    return JSON.load(File.open("#{@@notespath}/projects/#{s}", 'r+'))
+  end
+    
+  def save_project(s, n)
+    return File.write("#{@@notespath}/projects/#{n}", JSON.dump(s))
+  end
 
   def trim(p)
     t = []

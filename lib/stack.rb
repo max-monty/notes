@@ -140,4 +140,10 @@ class Stack
     end 
     system("rm $NOTESPATH/stacks/.#{ARGV[2]}")
   end
+
+  def new_day
+    `touch $NOTESPATH/stacks/.everyday`
+    stack = ['exercise', 'read', 'meditate', 'cold shower', 'journal']
+    @@u.save_stack(stack, '.everyday')
+  end
 end
