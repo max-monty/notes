@@ -42,8 +42,8 @@ class Project
   def show
     project = @@u.load_project(".#{ARGV[1]}")
     if !project.nil?
-      for i in 0..projects.length-1
-        puts "[#{i}] #{projects[i]}"
+      for i in 0..project.length-1
+        puts "[#{i}] #{project[i]}"
       end
     end
   end
